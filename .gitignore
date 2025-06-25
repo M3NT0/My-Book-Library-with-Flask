@@ -1,0 +1,35 @@
+# --- Virtual Environment ---
+venv/
+.venv/
+env/
+.env/
+
+# --- Python Cache and Compiled Files ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Database Files ---
+*.db
+*.sqlite3
+instance/
+library.db
+
+# --- User-Uploaded Content ---
+/static/images/uploads/
+
+# --- IDE and Editor Configuration ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- Environment Variables / Secrets ---
+.env
+*.env
+
+# --- Operating System Files ---
+.DS_Store
+Thumbs.db
+desktop.ini

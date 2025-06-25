@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Add Book{% endblock %}
+
+{% block content %}
+    <h1>Add a New Book</h1>
+
+    {# CHANGE 1: Add enctype="multipart/form-data" to the form tag #}
+    <form action="{{ url_for('add_book') }}" method="post" class="book-form" enctype="multipart/form-data" onsubmit="return confirm('Do you really want to add a new books baby?')" >
+        <div>
+            <label for="title">Title:</label>
+        </div>
+        <div>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div>
+            <label for="author">Author:</label>
+        </div>
+        <div>
+            <input type="text" id="author" name="author" required>
+        </div>
+        <div>
+            <label for="year">Year Published:</label>
+        </div>
+        <div>
+            <input type="number" id="year" name="year" required>
+        </div>
+        <div>
+            <label for="description">Description:</label>
+        </div>
+        <div>
+            <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
+        <div>
+            {# CHANGE 2: Change the input type to "file" #}
+            <label for="cover_image">Cover Image:</label>
+        </div>
+        <div>
+            <input type="file" id="cover_image" name="cover_image">
+        </div>
+        <button type="submit" id="sub-button">Add Book</button>
+    </form>
+{% endblock %}

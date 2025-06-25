@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Book Library{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('add_book') }}">Add Book</a>
+        </nav>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+
+        <button id="backToTopBtn" title="Go to top">↑</button>
+    </div>
+     <script>
+        // Find the button element in the document
+        const backToTopButton = document.getElementById("backToTopBtn");
+
+        // Attach a function to the window's scroll event
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        // This function shows or hides the button based on scroll position
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block"; // Show the button
+            } else {
+                backToTopButton.style.display = "none"; // Hide the button
+            }
+        }
+
+        // Attach a function to the button's click event
+        backToTopButton.addEventListener("click", function() {
+            // When clicked, scroll the window to the top smoothly
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

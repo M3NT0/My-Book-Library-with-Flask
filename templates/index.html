@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome to the Library</h1>
+    <div class="book-grid">
+        {% for book in books %}
+         <a href="{{ url_for('book_detail', book_id=book.id) }}">
+            <div class="book-card">
+                    <img src="{{ url_for('static', filename=book.cover_image) }}" alt="Cover for {{ book.title }}" id="img-cov">
+                    <h2>{{ book.title }}</h2>
+                    <p>{{ book.author }} ({{ book.year }})</p>
+            </div>
+        </a>
+            <hr style="color: white; height: 2px; background-color: white;">
+        {% else %}
+            <p>There are no books in the library yet.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Book - {{book.title}}{% endblock %}
+
+{% block content %}
+    <div class="book-detail">
+        <a href="{{ url_for('index') }}" class="back-link">← Back to Library</a>
+    </div>
+    <br>
+    <h1>Edit "{{ book.title }}"</h1>
+
+    {# Add enctype to allow file uploads #}
+    <form action="{{ url_for('edit_book', book_id=book.id) }}" method="post" class="book-form" enctype="multipart/form-data" onsubmit="return confirm('Babe, do you really intend to change the information about this books?')">
+        <div>
+            <label for="title">Title:</label>
+        </div>
+        <div>
+            <input type="text" id="title" name="title" value="{{ book.title }}" required>
+        </div>
+        <div>
+            <label for="author">Author:</label>
+        </div>
+        <div>
+            <input type="text" id="author" name="author" value="{{ book.author }}" required>
+        </div>
+        <div>
+            <label for="year">Year Published:</label>
+        </div>
+        <div>
+            <input type="number" id="year" name="year" value="{{ book.year }}" required>
+        </div>
+        <div>
+            <label for="description">Description:</label>
+        </div>
+        <div>
+            <textarea id="description" name="description" rows="4" required>{{ book.description }}</textarea>
+        </div>
+        <div class="current-cover">
+            <p><strong>Current Cover:</strong></p>
+            <img src="{{ url_for('static', filename=book.cover_image) }}" alt="Current cover for {{ book.title }}" width="150">
+        </div>
+        <div>
+             <label for="cover_image">Upload New Cover:</label>
+            {# Change the input type to "file" #}
+        </div>
+        <div>
+            <input type="file" id="cover_image" name="cover_image">
+            <p class="form-hint">Leave empty to keep the current cover.</p>
+        </div>
+        <button type="submit" id="sub-button">Save Changes</button>
+    </form>
+{% endblock %}
