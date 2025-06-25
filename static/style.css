@@ -34,6 +34,7 @@
             text-align: center;
             min-width: 70px;
             padding: 10px 17px;
+            transition: background-color 0.3s;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
         .header nav a:hover {
@@ -92,6 +93,7 @@
             background-color: green;
             color: white;
             border-radius: 4px;
+            transition: background-color 0.3s;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
         }
@@ -117,6 +119,7 @@
             color: white;
             border-radius: 4px;
             font-size: 15px;
+            transition: background-color 0.3s;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
         }
@@ -132,6 +135,7 @@
             background-color: green;
             font-size: 15px;
             border-radius: 4px;
+            transition: background-color 0.3s;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
         }
         #edit-btn:hover {
@@ -139,6 +143,7 @@
             opacity: 0.8;
         }
         .back-link {
+            transition: background-color 0.3s;
             padding: 10px;
         }
         .back-link:hover {
@@ -151,6 +156,7 @@
             padding: 10px;
             max-width: 500px;
             max-height: 400px;
+            transition: background-color 0.3s;
         }
         .book-card:hover {
             background-color: #333;
