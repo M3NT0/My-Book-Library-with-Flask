@@ -90,8 +90,6 @@ def add_book():
                 
                 # Store the path to be saved in the database
                 cover_path = f'images/uploads/{filename}'
-            else:
-                return 'Invalid file type. Only images are allowed.', 400
 
         # Now create the Book object with the correct cover path
         new_book = Book(
@@ -136,8 +134,6 @@ def edit_book(book_id):
                 uploaded_file.save(save_path)
                 # Update the database record with the new path
                 book_to_update.cover_image = f'images/uploads/{filename}'
-            else:
-                return 'Invalid file type. Only Images are allowed.', 400
         
         # If no new file was uploaded, the book_to_update.cover_image remains unchanged.
         
